@@ -91,3 +91,263 @@
 2024-10-25 19:59:18,932 - INFO - Batch load completed successfully.
 2024-10-25 19:59:18,932 - INFO - Database connection closed.
 2024-10-25 19:59:18,932 - INFO - Database connection closed.
+2024-10-25 20:07:44,565 - INFO - Reading input file: input.csv
+2024-10-25 20:07:44,589 - INFO - Successfully read 4 records from input.csv
+2024-10-25 20:07:44,590 - INFO - Starting batch load of contacts and patients from the CSV file.
+2024-10-25 20:07:44,590 - INFO - Starting batch processing of contacts and patients.
+2024-10-25 20:07:44,591 - INFO - Processing row 1: John Doe -> Mary
+2024-10-25 20:07:44,591 - INFO - Processing contact: John Doe (john.doe@missing.com) and associated patient: Mary Doe
+2024-10-25 20:07:44,592 - INFO - Duplicate contact found for email: john.doe@missing.com
+2024-10-25 20:07:44,592 - WARNING - Contact already exists: john.doe@missing.com. Skipping creation.
+2024-10-25 20:07:44,592 - INFO - Using existing contact UUID: e5c78c87-e9aa-4210-90c9-91d4d582d6ef for John Doe
+2024-10-25 20:07:44,593 - INFO - Matching patient found: Mary Doe (UUID: b1a843c7-0ed8-476c-9677-dfc744d21700)
+2024-10-25 20:07:44,593 - WARNING - Potential duplicate found. Skipping patient creation: Mary Doe
+2024-10-25 20:07:44,593 - INFO - Matching patient found: Mary Doe (UUID: b1a843c7-0ed8-476c-9677-dfc744d21700)
+2024-10-25 20:07:44,593 - INFO - Using existing patient UUID: b1a843c7-0ed8-476c-9677-dfc744d21700 for Mary Doe
+2024-10-25 20:07:44,599 - INFO - Linked contact e5c78c87-e9aa-4210-90c9-91d4d582d6ef to patient b1a843c7-0ed8-476c-9677-dfc744d21700 with relationship Father and relationship_uuid 06b7ca77-96fa-4906-87cf-d24d664029c9
+2024-10-25 20:07:44,600 - INFO - Processing row 2: Jane Doe -> Mary
+2024-10-25 20:07:44,600 - INFO - Processing contact: Jane Doe (jane.doe@alsomissing.com) and associated patient: Mary Doe
+2024-10-25 20:07:44,600 - INFO - Duplicate contact found for email: jane.doe@alsomissing.com
+2024-10-25 20:07:44,600 - WARNING - Contact already exists: jane.doe@alsomissing.com. Skipping creation.
+2024-10-25 20:07:44,601 - INFO - Using existing contact UUID: 4809b087-17ec-475d-a1f9-dbdb7678ac4c for Jane Doe
+2024-10-25 20:07:44,601 - INFO - Matching patient found: Mary Doe (UUID: b1a843c7-0ed8-476c-9677-dfc744d21700)
+2024-10-25 20:07:44,601 - WARNING - Potential duplicate found. Skipping patient creation: Mary Doe
+2024-10-25 20:07:44,602 - INFO - Matching patient found: Mary Doe (UUID: b1a843c7-0ed8-476c-9677-dfc744d21700)
+2024-10-25 20:07:44,602 - INFO - Using existing patient UUID: b1a843c7-0ed8-476c-9677-dfc744d21700 for Mary Doe
+2024-10-25 20:07:44,607 - INFO - Linked contact 4809b087-17ec-475d-a1f9-dbdb7678ac4c to patient b1a843c7-0ed8-476c-9677-dfc744d21700 with relationship Mother and relationship_uuid cbfe6b60-3513-481e-8e5e-6a29b26763b7
+2024-10-25 20:07:44,608 - INFO - Processing row 3: Pedro Perez -> Maria
+2024-10-25 20:07:44,608 - INFO - Processing contact: Pedro Perez (perez@email.com) and associated patient: Maria Perez
+2024-10-25 20:07:44,608 - INFO - Duplicate contact found for email: perez@email.com
+2024-10-25 20:07:44,609 - WARNING - Contact already exists: perez@email.com. Skipping creation.
+2024-10-25 20:07:44,609 - INFO - Using existing contact UUID: d4b328c9-8612-4923-8a56-7ab13fa5496b for Pedro Perez
+2024-10-25 20:07:44,610 - INFO - Matching patient found: Maria Perez (UUID: f4a5fd00-c4b6-4284-8658-f450cd892516)
+2024-10-25 20:07:44,610 - WARNING - Potential duplicate found. Skipping patient creation: Maria Perez
+2024-10-25 20:07:44,610 - INFO - Matching patient found: Maria Perez (UUID: f4a5fd00-c4b6-4284-8658-f450cd892516)
+2024-10-25 20:07:44,610 - INFO - Using existing patient UUID: f4a5fd00-c4b6-4284-8658-f450cd892516 for Maria Perez
+2024-10-25 20:07:44,615 - INFO - Linked contact d4b328c9-8612-4923-8a56-7ab13fa5496b to patient f4a5fd00-c4b6-4284-8658-f450cd892516 with relationship Father and relationship_uuid 4100d3f0-7d62-4f48-a571-932d545c19fd
+2024-10-25 20:07:44,615 - INFO - Processing row 4: Juan Hernandez -> Sara
+2024-10-25 20:07:44,615 - INFO - Processing contact: Juan Hernandez (hernandez@email.com) and associated patient: Sara Hernandez
+2024-10-25 20:07:44,615 - INFO - Duplicate contact found for email: hernandez@email.com
+2024-10-25 20:07:44,616 - WARNING - Contact already exists: hernandez@email.com. Skipping creation.
+2024-10-25 20:07:44,616 - INFO - Using existing contact UUID: e2f3deef-fabb-441b-a826-ec4dfda0ee6a for Juan Hernandez
+2024-10-25 20:07:44,616 - INFO - Matching patient found: Sara Hernandez (UUID: 819e66c3-bcb0-4c03-8a3c-cac5ce8ba725)
+2024-10-25 20:07:44,616 - WARNING - Potential duplicate found. Skipping patient creation: Sara Hernandez
+2024-10-25 20:07:44,617 - INFO - Matching patient found: Sara Hernandez (UUID: 819e66c3-bcb0-4c03-8a3c-cac5ce8ba725)
+2024-10-25 20:07:44,617 - INFO - Using existing patient UUID: 819e66c3-bcb0-4c03-8a3c-cac5ce8ba725 for Sara Hernandez
+2024-10-25 20:07:44,621 - INFO - Linked contact e2f3deef-fabb-441b-a826-ec4dfda0ee6a to patient 819e66c3-bcb0-4c03-8a3c-cac5ce8ba725 with relationship Father and relationship_uuid 48b2f98b-e5f7-403b-bfdb-3441bd649bec
+2024-10-25 20:07:44,621 - INFO - Batch processing completed successfully.
+2024-10-25 20:07:44,621 - INFO - Batch load completed successfully.
+2024-10-25 20:07:44,622 - INFO - Database connection closed.
+2024-10-25 20:07:44,622 - INFO - Database connection closed.
+2024-10-25 20:08:31,844 - INFO - Reading input file: input.csv
+2024-10-25 20:08:31,856 - INFO - Successfully read 4 records from input.csv
+2024-10-25 20:08:31,858 - INFO - Starting batch load of contacts and patients from the CSV file.
+2024-10-25 20:08:31,858 - INFO - Starting batch processing of contacts and patients.
+2024-10-25 20:08:31,858 - INFO - Processing row 1: John Doe -> Mary
+2024-10-25 20:08:31,858 - INFO - Processing contact: John Doe (john.doe@missing.com) and associated patient: Mary Doe
+2024-10-25 20:08:31,863 - INFO - New contact added: John Doe (john.doe@missing.com) (UUID: 4ff1174a-0a78-47bb-a16f-f08517539b6b)
+2024-10-25 20:08:31,864 - INFO - No matching patient found for: Mary Doe
+2024-10-25 20:08:31,870 - INFO - New patient added: Mary Doe (UUID: eef0bd90-7c02-46bc-94e0-19cc517a0696)
+2024-10-25 20:08:31,874 - INFO - Linked contact 4ff1174a-0a78-47bb-a16f-f08517539b6b to patient eef0bd90-7c02-46bc-94e0-19cc517a0696 with relationship Father and relationship_uuid 030aa86c-e60d-4807-b125-ff9802d35861
+2024-10-25 20:08:31,875 - INFO - Processing row 2: Jane Doe -> Mary
+2024-10-25 20:08:31,875 - INFO - Processing contact: Jane Doe (jane.doe@alsomissing.com) and associated patient: Mary Doe
+2024-10-25 20:08:31,880 - INFO - New contact added: Jane Doe (jane.doe@alsomissing.com) (UUID: 0a1bbc03-e0ff-49d6-babc-6944e0c5d355)
+2024-10-25 20:08:31,880 - INFO - Matching patient found: Mary Doe (UUID: eef0bd90-7c02-46bc-94e0-19cc517a0696)
+2024-10-25 20:08:31,880 - WARNING - Potential duplicate found. Skipping patient creation: Mary Doe
+2024-10-25 20:08:31,882 - INFO - Matching patient found: Mary Doe (UUID: eef0bd90-7c02-46bc-94e0-19cc517a0696)
+2024-10-25 20:08:31,882 - INFO - Using existing patient UUID: eef0bd90-7c02-46bc-94e0-19cc517a0696 for Mary Doe
+2024-10-25 20:08:31,887 - INFO - Linked contact 0a1bbc03-e0ff-49d6-babc-6944e0c5d355 to patient eef0bd90-7c02-46bc-94e0-19cc517a0696 with relationship Mother and relationship_uuid b5670e64-5282-45bc-a033-8d3eac3e8921
+2024-10-25 20:08:31,888 - INFO - Processing row 3: Pedro Perez -> Maria
+2024-10-25 20:08:31,888 - INFO - Processing contact: Pedro Perez (perez@email.com) and associated patient: Maria Perez
+2024-10-25 20:08:31,892 - INFO - New contact added: Pedro Perez (perez@email.com) (UUID: 39a86ad4-51ee-449d-8536-d28b870a6705)
+2024-10-25 20:08:31,893 - INFO - No matching patient found for: Maria Perez
+2024-10-25 20:08:31,897 - INFO - New patient added: Maria Perez (UUID: f2737b50-5473-48b8-82fe-dd2918ab1863)
+2024-10-25 20:08:31,902 - INFO - Linked contact 39a86ad4-51ee-449d-8536-d28b870a6705 to patient f2737b50-5473-48b8-82fe-dd2918ab1863 with relationship Father and relationship_uuid 808e166c-fed3-4815-9751-5be8d1aff761
+2024-10-25 20:08:31,902 - INFO - Processing row 4: Juan Hernandez -> Sara
+2024-10-25 20:08:31,902 - INFO - Processing contact: Juan Hernandez (hernandez@email.com) and associated patient: Sara Hernandez
+2024-10-25 20:08:31,908 - INFO - New contact added: Juan Hernandez (hernandez@email.com) (UUID: 29e83341-c4ed-4784-a675-bcb6c006447e)
+2024-10-25 20:08:31,908 - INFO - No matching patient found for: Sara Hernandez
+2024-10-25 20:08:31,913 - INFO - New patient added: Sara Hernandez (UUID: 74a8f66e-21e6-4cef-af19-408e132dfacb)
+2024-10-25 20:08:31,918 - INFO - Linked contact 29e83341-c4ed-4784-a675-bcb6c006447e to patient 74a8f66e-21e6-4cef-af19-408e132dfacb with relationship Father and relationship_uuid 9ee42b77-731b-42f8-9a2c-c806433a7a0b
+2024-10-25 20:08:31,918 - INFO - Batch processing completed successfully.
+2024-10-25 20:08:31,918 - INFO - Batch load completed successfully.
+2024-10-25 20:08:31,919 - INFO - Database connection closed.
+2024-10-25 20:08:31,919 - INFO - Database connection closed.
+2024-10-25 20:08:50,335 - INFO - Reading input file: input.csv
+2024-10-25 20:08:50,345 - INFO - Successfully read 4 records from input.csv
+2024-10-25 20:08:50,346 - INFO - Starting batch load of contacts and patients from the CSV file.
+2024-10-25 20:08:50,346 - INFO - Starting batch processing of contacts and patients.
+2024-10-25 20:08:50,347 - INFO - Processing row 1: John Doe -> Mary
+2024-10-25 20:08:50,347 - INFO - Processing contact: John Doe (john.doe@missing.com) and associated patient: Mary Doe
+2024-10-25 20:08:50,347 - INFO - Duplicate contact found for email: john.doe@missing.com
+2024-10-25 20:08:50,348 - WARNING - Contact already exists: john.doe@missing.com. Skipping creation.
+2024-10-25 20:08:50,348 - INFO - Using existing contact UUID: 4ff1174a-0a78-47bb-a16f-f08517539b6b for John Doe
+2024-10-25 20:08:50,348 - INFO - Matching patient found: Mary Doe (UUID: eef0bd90-7c02-46bc-94e0-19cc517a0696)
+2024-10-25 20:08:50,348 - WARNING - Potential duplicate found. Skipping patient creation: Mary Doe
+2024-10-25 20:08:50,349 - INFO - Matching patient found: Mary Doe (UUID: eef0bd90-7c02-46bc-94e0-19cc517a0696)
+2024-10-25 20:08:50,349 - INFO - Using existing patient UUID: eef0bd90-7c02-46bc-94e0-19cc517a0696 for Mary Doe
+2024-10-25 20:08:50,354 - INFO - Linked contact 4ff1174a-0a78-47bb-a16f-f08517539b6b to patient eef0bd90-7c02-46bc-94e0-19cc517a0696 with relationship Father and relationship_uuid 0d0d702d-339f-48b5-b5b9-2863f57806b7
+2024-10-25 20:08:50,355 - INFO - Processing row 2: Jane Doe -> Mary
+2024-10-25 20:08:50,356 - INFO - Processing contact: Jane Doe (jane.doe@alsomissing.com) and associated patient: Mary Doe
+2024-10-25 20:08:50,356 - INFO - Duplicate contact found for email: jane.doe@alsomissing.com
+2024-10-25 20:08:50,357 - WARNING - Contact already exists: jane.doe@alsomissing.com. Skipping creation.
+2024-10-25 20:08:50,357 - INFO - Using existing contact UUID: 0a1bbc03-e0ff-49d6-babc-6944e0c5d355 for Jane Doe
+2024-10-25 20:08:50,357 - INFO - Matching patient found: Mary Doe (UUID: eef0bd90-7c02-46bc-94e0-19cc517a0696)
+2024-10-25 20:08:50,357 - WARNING - Potential duplicate found. Skipping patient creation: Mary Doe
+2024-10-25 20:08:50,358 - INFO - Matching patient found: Mary Doe (UUID: eef0bd90-7c02-46bc-94e0-19cc517a0696)
+2024-10-25 20:08:50,358 - INFO - Using existing patient UUID: eef0bd90-7c02-46bc-94e0-19cc517a0696 for Mary Doe
+2024-10-25 20:08:50,362 - INFO - Linked contact 0a1bbc03-e0ff-49d6-babc-6944e0c5d355 to patient eef0bd90-7c02-46bc-94e0-19cc517a0696 with relationship Mother and relationship_uuid eb52a87d-838f-42a8-80a0-6240d4f26aae
+2024-10-25 20:08:50,363 - INFO - Processing row 3: Pedro Perez -> Maria
+2024-10-25 20:08:50,363 - INFO - Processing contact: Pedro Perez (perez@email.com) and associated patient: Maria Perez
+2024-10-25 20:08:50,363 - INFO - Duplicate contact found for email: perez@email.com
+2024-10-25 20:08:50,364 - WARNING - Contact already exists: perez@email.com. Skipping creation.
+2024-10-25 20:08:50,364 - INFO - Using existing contact UUID: 39a86ad4-51ee-449d-8536-d28b870a6705 for Pedro Perez
+2024-10-25 20:08:50,364 - INFO - Matching patient found: Maria Perez (UUID: f2737b50-5473-48b8-82fe-dd2918ab1863)
+2024-10-25 20:08:50,364 - WARNING - Potential duplicate found. Skipping patient creation: Maria Perez
+2024-10-25 20:08:50,365 - INFO - Matching patient found: Maria Perez (UUID: f2737b50-5473-48b8-82fe-dd2918ab1863)
+2024-10-25 20:08:50,365 - INFO - Using existing patient UUID: f2737b50-5473-48b8-82fe-dd2918ab1863 for Maria Perez
+2024-10-25 20:08:50,369 - INFO - Linked contact 39a86ad4-51ee-449d-8536-d28b870a6705 to patient f2737b50-5473-48b8-82fe-dd2918ab1863 with relationship Father and relationship_uuid 8f536891-7e56-436d-b701-b604016df752
+2024-10-25 20:08:50,370 - INFO - Processing row 4: Juan Hernandez -> Sara
+2024-10-25 20:08:50,370 - INFO - Processing contact: Juan Hernandez (hernandez@email.com) and associated patient: Sara Hernandez
+2024-10-25 20:08:50,370 - INFO - Duplicate contact found for email: hernandez@email.com
+2024-10-25 20:08:50,370 - WARNING - Contact already exists: hernandez@email.com. Skipping creation.
+2024-10-25 20:08:50,370 - INFO - Using existing contact UUID: 29e83341-c4ed-4784-a675-bcb6c006447e for Juan Hernandez
+2024-10-25 20:08:50,371 - INFO - Matching patient found: Sara Hernandez (UUID: 74a8f66e-21e6-4cef-af19-408e132dfacb)
+2024-10-25 20:08:50,371 - WARNING - Potential duplicate found. Skipping patient creation: Sara Hernandez
+2024-10-25 20:08:50,371 - INFO - Matching patient found: Sara Hernandez (UUID: 74a8f66e-21e6-4cef-af19-408e132dfacb)
+2024-10-25 20:08:50,371 - INFO - Using existing patient UUID: 74a8f66e-21e6-4cef-af19-408e132dfacb for Sara Hernandez
+2024-10-25 20:08:50,377 - INFO - Linked contact 29e83341-c4ed-4784-a675-bcb6c006447e to patient 74a8f66e-21e6-4cef-af19-408e132dfacb with relationship Father and relationship_uuid 377d0313-af26-4c04-8fe1-5c71ff0559e6
+2024-10-25 20:08:50,377 - INFO - Batch processing completed successfully.
+2024-10-25 20:08:50,378 - INFO - Batch load completed successfully.
+2024-10-25 20:08:50,378 - INFO - Database connection closed.
+2024-10-25 20:08:50,378 - INFO - Database connection closed.
+2024-10-25 20:08:58,952 - INFO - Reading input file: input.csv
+2024-10-25 20:08:58,962 - INFO - Successfully read 4 records from input.csv
+2024-10-25 20:08:58,963 - INFO - Starting batch load of contacts and patients from the CSV file.
+2024-10-25 20:08:58,964 - INFO - Starting batch processing of contacts and patients.
+2024-10-25 20:08:58,964 - INFO - Processing row 1: John Doe -> Mary
+2024-10-25 20:08:58,964 - INFO - Processing contact: John Doe (john.doe@missing.com) and associated patient: Mary Doe
+2024-10-25 20:08:58,965 - INFO - Duplicate contact found for email: john.doe@missing.com
+2024-10-25 20:08:58,965 - WARNING - Contact already exists: john.doe@missing.com. Skipping creation.
+2024-10-25 20:08:58,965 - INFO - Using existing contact UUID: 4ff1174a-0a78-47bb-a16f-f08517539b6b for John Doe
+2024-10-25 20:08:58,966 - INFO - Matching patient found: Mary Doe (UUID: eef0bd90-7c02-46bc-94e0-19cc517a0696)
+2024-10-25 20:08:58,966 - WARNING - Potential duplicate found. Skipping patient creation: Mary Doe
+2024-10-25 20:08:58,966 - INFO - Matching patient found: Mary Doe (UUID: eef0bd90-7c02-46bc-94e0-19cc517a0696)
+2024-10-25 20:08:58,966 - INFO - Using existing patient UUID: eef0bd90-7c02-46bc-94e0-19cc517a0696 for Mary Doe
+2024-10-25 20:08:58,971 - INFO - Linked contact 4ff1174a-0a78-47bb-a16f-f08517539b6b to patient eef0bd90-7c02-46bc-94e0-19cc517a0696 with relationship Father and relationship_uuid 0ca1bc8f-4400-483a-8a54-3bb079bb0ad6
+2024-10-25 20:08:58,972 - INFO - Processing row 2: Jane Doe -> Mary
+2024-10-25 20:08:58,972 - INFO - Processing contact: Jane Doe (jane.doe@alsomissing.com) and associated patient: Mary Doe
+2024-10-25 20:08:58,972 - INFO - Duplicate contact found for email: jane.doe@alsomissing.com
+2024-10-25 20:08:58,972 - WARNING - Contact already exists: jane.doe@alsomissing.com. Skipping creation.
+2024-10-25 20:08:58,973 - INFO - Using existing contact UUID: 0a1bbc03-e0ff-49d6-babc-6944e0c5d355 for Jane Doe
+2024-10-25 20:08:58,973 - INFO - Matching patient found: Mary Doe (UUID: eef0bd90-7c02-46bc-94e0-19cc517a0696)
+2024-10-25 20:08:58,973 - WARNING - Potential duplicate found. Skipping patient creation: Mary Doe
+2024-10-25 20:08:58,973 - INFO - Matching patient found: Mary Doe (UUID: eef0bd90-7c02-46bc-94e0-19cc517a0696)
+2024-10-25 20:08:58,973 - INFO - Using existing patient UUID: eef0bd90-7c02-46bc-94e0-19cc517a0696 for Mary Doe
+2024-10-25 20:08:58,979 - INFO - Linked contact 0a1bbc03-e0ff-49d6-babc-6944e0c5d355 to patient eef0bd90-7c02-46bc-94e0-19cc517a0696 with relationship Mother and relationship_uuid f92df188-53ea-49ae-a6bf-c7131947d5a9
+2024-10-25 20:08:58,979 - INFO - Processing row 3: Pedro Perez -> Maria
+2024-10-25 20:08:58,979 - INFO - Processing contact: Pedro Perez (perez@email.com) and associated patient: Maria Perez
+2024-10-25 20:08:58,980 - INFO - Duplicate contact found for email: perez@email.com
+2024-10-25 20:08:58,980 - WARNING - Contact already exists: perez@email.com. Skipping creation.
+2024-10-25 20:08:58,981 - INFO - Using existing contact UUID: 39a86ad4-51ee-449d-8536-d28b870a6705 for Pedro Perez
+2024-10-25 20:08:58,981 - INFO - Matching patient found: Maria Perez (UUID: f2737b50-5473-48b8-82fe-dd2918ab1863)
+2024-10-25 20:08:58,981 - WARNING - Potential duplicate found. Skipping patient creation: Maria Perez
+2024-10-25 20:08:58,981 - INFO - Matching patient found: Maria Perez (UUID: f2737b50-5473-48b8-82fe-dd2918ab1863)
+2024-10-25 20:08:58,981 - INFO - Using existing patient UUID: f2737b50-5473-48b8-82fe-dd2918ab1863 for Maria Perez
+2024-10-25 20:08:58,985 - INFO - Linked contact 39a86ad4-51ee-449d-8536-d28b870a6705 to patient f2737b50-5473-48b8-82fe-dd2918ab1863 with relationship Father and relationship_uuid 6f6adcd9-92a6-458e-beb1-86bd42aa0ce2
+2024-10-25 20:08:58,986 - INFO - Processing row 4: Juan Hernandez -> Sara
+2024-10-25 20:08:58,986 - INFO - Processing contact: Juan Hernandez (hernandez@email.com) and associated patient: Sara Hernandez
+2024-10-25 20:08:58,986 - INFO - Duplicate contact found for email: hernandez@email.com
+2024-10-25 20:08:58,986 - WARNING - Contact already exists: hernandez@email.com. Skipping creation.
+2024-10-25 20:08:58,987 - INFO - Using existing contact UUID: 29e83341-c4ed-4784-a675-bcb6c006447e for Juan Hernandez
+2024-10-25 20:08:58,987 - INFO - Matching patient found: Sara Hernandez (UUID: 74a8f66e-21e6-4cef-af19-408e132dfacb)
+2024-10-25 20:08:58,987 - WARNING - Potential duplicate found. Skipping patient creation: Sara Hernandez
+2024-10-25 20:08:58,987 - INFO - Matching patient found: Sara Hernandez (UUID: 74a8f66e-21e6-4cef-af19-408e132dfacb)
+2024-10-25 20:08:58,988 - INFO - Using existing patient UUID: 74a8f66e-21e6-4cef-af19-408e132dfacb for Sara Hernandez
+2024-10-25 20:08:58,993 - INFO - Linked contact 29e83341-c4ed-4784-a675-bcb6c006447e to patient 74a8f66e-21e6-4cef-af19-408e132dfacb with relationship Father and relationship_uuid 7d23d0fb-3ff7-4816-95fb-1d90d51146d6
+2024-10-25 20:08:58,993 - INFO - Batch processing completed successfully.
+2024-10-25 20:08:58,994 - INFO - Batch load completed successfully.
+2024-10-25 20:08:58,994 - INFO - Database connection closed.
+2024-10-25 20:08:58,994 - INFO - Database connection closed.
+2024-10-25 20:11:11,121 - INFO - Reading input file: input.csv
+2024-10-25 20:11:11,131 - INFO - Successfully read 4 records from input.csv
+2024-10-25 20:11:11,132 - INFO - Starting batch load of contacts and patients from the CSV file.
+2024-10-25 20:11:11,132 - INFO - Starting batch processing of contacts and patients.
+2024-10-25 20:11:11,133 - INFO - Processing row 1: John Doe -> Mary
+2024-10-25 20:11:11,133 - INFO - Processing contact: John Doe (john.doe@missing.com) and associated patient: Mary Doe
+2024-10-25 20:11:11,138 - INFO - New contact added: John Doe (john.doe@missing.com) (UUID: fcf7f078-5cc6-4759-be49-6925a86db451)
+2024-10-25 20:11:11,139 - INFO - No matching patient found for: Mary Doe
+2024-10-25 20:11:11,144 - INFO - New patient added: Mary Doe (UUID: b739a397-63f6-4526-aede-f6f75a6c662e)
+2024-10-25 20:11:11,151 - INFO - Linked contact fcf7f078-5cc6-4759-be49-6925a86db451 to patient b739a397-63f6-4526-aede-f6f75a6c662e with relationship Father and relationship_uuid 646a1589-57c2-47cb-b0f8-fddfecdfbb9c
+2024-10-25 20:11:11,151 - INFO - Processing row 2: Jane Doe -> Mary
+2024-10-25 20:11:11,151 - INFO - Processing contact: Jane Doe (jane.doe@alsomissing.com) and associated patient: Mary Doe
+2024-10-25 20:11:11,156 - INFO - New contact added: Jane Doe (jane.doe@alsomissing.com) (UUID: 0abf1047-3e54-40bd-8b79-072c878a19bc)
+2024-10-25 20:11:11,157 - INFO - Matching patient found: Mary Doe (UUID: b739a397-63f6-4526-aede-f6f75a6c662e)
+2024-10-25 20:11:11,157 - WARNING - Potential duplicate found. Skipping patient creation: Mary Doe
+2024-10-25 20:11:11,157 - INFO - Matching patient found: Mary Doe (UUID: b739a397-63f6-4526-aede-f6f75a6c662e)
+2024-10-25 20:11:11,157 - INFO - Using existing patient UUID: b739a397-63f6-4526-aede-f6f75a6c662e for Mary Doe
+2024-10-25 20:11:11,163 - INFO - Linked contact 0abf1047-3e54-40bd-8b79-072c878a19bc to patient b739a397-63f6-4526-aede-f6f75a6c662e with relationship Mother and relationship_uuid 004aa2b9-b6d1-4971-bcf7-39eab515888c
+2024-10-25 20:11:11,164 - INFO - Processing row 3: Pedro Perez -> Maria
+2024-10-25 20:11:11,164 - INFO - Processing contact: Pedro Perez (perez@email.com) and associated patient: Maria Perez
+2024-10-25 20:11:11,169 - INFO - New contact added: Pedro Perez (perez@email.com) (UUID: ec27baf3-fe6a-4502-bd31-44290d3da172)
+2024-10-25 20:11:11,169 - INFO - No matching patient found for: Maria Perez
+2024-10-25 20:11:11,173 - INFO - New patient added: Maria Perez (UUID: 4832ef12-04a4-4450-ad71-435464e4cc45)
+2024-10-25 20:11:11,179 - INFO - Linked contact ec27baf3-fe6a-4502-bd31-44290d3da172 to patient 4832ef12-04a4-4450-ad71-435464e4cc45 with relationship Father and relationship_uuid eca8e4de-08a0-4351-a240-6d9e8081aa6b
+2024-10-25 20:11:11,180 - INFO - Processing row 4: Juan Hernandez -> Sara
+2024-10-25 20:11:11,180 - INFO - Processing contact: Juan Hernandez (hernandez@email.com) and associated patient: Sara Hernandez
+2024-10-25 20:11:11,185 - INFO - New contact added: Juan Hernandez (hernandez@email.com) (UUID: ad054360-f84f-45c4-acf5-1f08392342e2)
+2024-10-25 20:11:11,185 - INFO - No matching patient found for: Sara Hernandez
+2024-10-25 20:11:11,190 - INFO - New patient added: Sara Hernandez (UUID: 6d2cbddb-00c6-40c7-956f-4f0ad8ab96f9)
+2024-10-25 20:11:11,196 - INFO - Linked contact ad054360-f84f-45c4-acf5-1f08392342e2 to patient 6d2cbddb-00c6-40c7-956f-4f0ad8ab96f9 with relationship Father and relationship_uuid 3fdfc867-7603-4056-a4a5-65f10a575bda
+2024-10-25 20:11:11,197 - INFO - Batch processing completed successfully.
+2024-10-25 20:11:11,197 - INFO - Batch load completed successfully.
+2024-10-25 20:11:11,197 - INFO - Database connection closed.
+2024-10-25 20:11:11,197 - INFO - Database connection closed.
+2024-10-25 20:11:23,602 - INFO - Reading input file: input.csv
+2024-10-25 20:11:23,621 - INFO - Successfully read 4 records from input.csv
+2024-10-25 20:11:23,623 - INFO - Starting batch load of contacts and patients from the CSV file.
+2024-10-25 20:11:23,624 - INFO - Starting batch processing of contacts and patients.
+2024-10-25 20:11:23,624 - INFO - Processing row 1: John Doe -> Mary
+2024-10-25 20:11:23,624 - INFO - Processing contact: John Doe (john.doe@missing.com) and associated patient: Mary Doe
+2024-10-25 20:11:23,626 - INFO - Duplicate contact found for email: john.doe@missing.com
+2024-10-25 20:11:23,626 - WARNING - Contact already exists: john.doe@missing.com. Skipping creation.
+2024-10-25 20:11:23,627 - INFO - Using existing contact UUID: fcf7f078-5cc6-4759-be49-6925a86db451 for John Doe
+2024-10-25 20:11:23,627 - INFO - Matching patient found: Mary Doe (UUID: b739a397-63f6-4526-aede-f6f75a6c662e)
+2024-10-25 20:11:23,627 - WARNING - Potential duplicate found. Skipping patient creation: Mary Doe
+2024-10-25 20:11:23,627 - INFO - Matching patient found: Mary Doe (UUID: b739a397-63f6-4526-aede-f6f75a6c662e)
+2024-10-25 20:11:23,627 - INFO - Using existing patient UUID: b739a397-63f6-4526-aede-f6f75a6c662e for Mary Doe
+2024-10-25 20:11:23,628 - INFO - Link already exists between contact fcf7f078-5cc6-4759-be49-6925a86db451 and patient b739a397-63f6-4526-aede-f6f75a6c662e with relationship Father. Skipping.
+2024-10-25 20:11:23,628 - INFO - Processing row 2: Jane Doe -> Mary
+2024-10-25 20:11:23,629 - INFO - Processing contact: Jane Doe (jane.doe@alsomissing.com) and associated patient: Mary Doe
+2024-10-25 20:11:23,629 - INFO - Duplicate contact found for email: jane.doe@alsomissing.com
+2024-10-25 20:11:23,629 - WARNING - Contact already exists: jane.doe@alsomissing.com. Skipping creation.
+2024-10-25 20:11:23,629 - INFO - Using existing contact UUID: 0abf1047-3e54-40bd-8b79-072c878a19bc for Jane Doe
+2024-10-25 20:11:23,629 - INFO - Matching patient found: Mary Doe (UUID: b739a397-63f6-4526-aede-f6f75a6c662e)
+2024-10-25 20:11:23,630 - WARNING - Potential duplicate found. Skipping patient creation: Mary Doe
+2024-10-25 20:11:23,630 - INFO - Matching patient found: Mary Doe (UUID: b739a397-63f6-4526-aede-f6f75a6c662e)
+2024-10-25 20:11:23,630 - INFO - Using existing patient UUID: b739a397-63f6-4526-aede-f6f75a6c662e for Mary Doe
+2024-10-25 20:11:23,630 - INFO - Link already exists between contact 0abf1047-3e54-40bd-8b79-072c878a19bc and patient b739a397-63f6-4526-aede-f6f75a6c662e with relationship Mother. Skipping.
+2024-10-25 20:11:23,630 - INFO - Processing row 3: Pedro Perez -> Maria
+2024-10-25 20:11:23,630 - INFO - Processing contact: Pedro Perez (perez@email.com) and associated patient: Maria Perez
+2024-10-25 20:11:23,630 - INFO - Duplicate contact found for email: perez@email.com
+2024-10-25 20:11:23,631 - WARNING - Contact already exists: perez@email.com. Skipping creation.
+2024-10-25 20:11:23,631 - INFO - Using existing contact UUID: ec27baf3-fe6a-4502-bd31-44290d3da172 for Pedro Perez
+2024-10-25 20:11:23,631 - INFO - Matching patient found: Maria Perez (UUID: 4832ef12-04a4-4450-ad71-435464e4cc45)
+2024-10-25 20:11:23,631 - WARNING - Potential duplicate found. Skipping patient creation: Maria Perez
+2024-10-25 20:11:23,632 - INFO - Matching patient found: Maria Perez (UUID: 4832ef12-04a4-4450-ad71-435464e4cc45)
+2024-10-25 20:11:23,632 - INFO - Using existing patient UUID: 4832ef12-04a4-4450-ad71-435464e4cc45 for Maria Perez
+2024-10-25 20:11:23,633 - INFO - Link already exists between contact ec27baf3-fe6a-4502-bd31-44290d3da172 and patient 4832ef12-04a4-4450-ad71-435464e4cc45 with relationship Father. Skipping.
+2024-10-25 20:11:23,633 - INFO - Processing row 4: Juan Hernandez -> Sara
+2024-10-25 20:11:23,633 - INFO - Processing contact: Juan Hernandez (hernandez@email.com) and associated patient: Sara Hernandez
+2024-10-25 20:11:23,634 - INFO - Duplicate contact found for email: hernandez@email.com
+2024-10-25 20:11:23,634 - WARNING - Contact already exists: hernandez@email.com. Skipping creation.
+2024-10-25 20:11:23,634 - INFO - Using existing contact UUID: ad054360-f84f-45c4-acf5-1f08392342e2 for Juan Hernandez
+2024-10-25 20:11:23,635 - INFO - Matching patient found: Sara Hernandez (UUID: 6d2cbddb-00c6-40c7-956f-4f0ad8ab96f9)
+2024-10-25 20:11:23,635 - WARNING - Potential duplicate found. Skipping patient creation: Sara Hernandez
+2024-10-25 20:11:23,636 - INFO - Matching patient found: Sara Hernandez (UUID: 6d2cbddb-00c6-40c7-956f-4f0ad8ab96f9)
+2024-10-25 20:11:23,636 - INFO - Using existing patient UUID: 6d2cbddb-00c6-40c7-956f-4f0ad8ab96f9 for Sara Hernandez
+2024-10-25 20:11:23,636 - INFO - Link already exists between contact ad054360-f84f-45c4-acf5-1f08392342e2 and patient 6d2cbddb-00c6-40c7-956f-4f0ad8ab96f9 with relationship Father. Skipping.
+2024-10-25 20:11:23,636 - INFO - Batch processing completed successfully.
+2024-10-25 20:11:23,636 - INFO - Batch load completed successfully.
+2024-10-25 20:11:23,637 - INFO - Database connection closed.
+2024-10-25 20:11:23,637 - INFO - Database connection closed.

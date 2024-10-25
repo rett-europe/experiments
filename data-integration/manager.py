@@ -61,13 +61,26 @@ class PatientContactManager:
             persona_rett_uuid (str): UUID of the patient.
             relationship_type (str): Type of relationship (e.g., "Father", "Mother").
         """
-        relationship_uuid = str(uuid.uuid4())
+        # Check if the link already exists
         self.cursor.execute('''
-            INSERT INTO Link_Table (relationship_uuid, relationship, contact_uuid, persona_rett_uuid)
-            VALUES (?, ?, ?, ?)
-        ''', (relationship_uuid, relationship_type, contact_uuid, persona_rett_uuid))
-        self.conn.commit()
-        self.logger.info(f"Linked contact {contact_uuid} to patient {persona_rett_uuid} with relationship {relationship_type} and relationship_uuid {relationship_uuid}")
+            SELECT 1 FROM Link_Table
+            WHERE contact_uuid = ? AND persona_rett_uuid = ? AND relationship = ?
+        ''', (contact_uuid, persona_rett_uuid, relationship_type))
+        
+        # Fetch one result if it exists
+        existing_link = self.cursor.fetchone()
+        
+        if existing_link:
+            self.logger.info(f"Link already exists between contact {contact_uuid} and patient {persona_rett_uuid} with relationship {relationship_type}. Skipping.")
+        else:
+            # If no existing link, create a new relationship
+            relationship_uuid = str(uuid.uuid4())
+            self.cursor.execute('''
+                INSERT INTO Link_Table (relationship_uuid, relationship, contact_uuid, persona_rett_uuid)
+                VALUES (?, ?, ?, ?)
+            ''', (relationship_uuid, relationship_type, contact_uuid, persona_rett_uuid))
+            self.conn.commit()
+            self.logger.info(f"Linked contact {contact_uuid} to patient {persona_rett_uuid} with relationship {relationship_type} and relationship_uuid {relationship_uuid}")
 
     def batch_load_data(self, df):
         """
