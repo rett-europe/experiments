@@ -1,0 +1,5 @@
+parent_name;email;relationship;resides_in_spain;country;rett_name;rett_surname;date_of_birth;gender;diagnosis_type;creation_date;age;age_group;region_id
+John Doe;john.doe@missing.com;Father;Yes;Spain;Mary;Doe;01/01/2000;Female;Rett Syndrome;01/01/2020;24;Adult;1
+Jane Doe;jane.doe@alsomissing.com;Mother;Yes;Spain;Mary;Doe;01/01/2000;Female;Rett Syndrome;01/01/2020;24;Adult;1
+Pedro Perez;perez@email.com;Father;Yes;Spain;Maria;Perez;01/01/2005;Female;Rett Syndrome;01/01/2020;19;Adult;1
+Juan Hernandez;hernandez@email.com;Father;Yes;Spain;Sara;Hernandez;01/01/2020;Female;Rett Syndrome;01/01/2020;4;Child;1
