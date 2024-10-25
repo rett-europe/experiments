@@ -22,7 +22,7 @@ csv_file = args.input_file  # Take the CSV file path from the command-line argum
 logger.info(f"Reading input file: {csv_file}")
 
 try:
-    df = pd.read_csv(csv_file)  # Load the CSV file into a DataFrame
+    df = pd.read_csv(csv_file, sep=";")  # Load the CSV file into a DataFrame
     logger.info(f"Successfully read {len(df)} records from {csv_file}")
 except FileNotFoundError:
     logger.error(f"File not found: {csv_file}")
