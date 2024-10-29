@@ -1,8 +1,12 @@
 # How to send emails using SendGrid
 
-1. Get a API key from SendGrid
+1. Install SendGrid Python package
 
-2. Setup an env constant with the API key
+```bash
+pip install sendgrid
+```
+
+2. Get a API key from SendGrid, and setup an env constant with the API key
 
 ```bash
 setx SENDGRID_API_KEY "<your API key>"
