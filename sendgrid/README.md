@@ -8,8 +8,8 @@
 setx SENDGRID_API_KEY "<your API key>"
 ```
 
-3. Execute the script:
+3. Execute the script specifying the from and to emails:
 
 ```bash
-Python send_email.py
+Python send_email.py <from email> <to email>
 ```
