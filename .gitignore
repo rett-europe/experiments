@@ -5,3 +5,6 @@
 *.pyc
 *.pyo
 __pycache__
+
+# Environment files
+*.env
