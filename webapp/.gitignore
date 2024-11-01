@@ -1,0 +1,86 @@
+# Dart related
+*.dart_tool/
+*.packages
+*.lock
+.pub/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+.flutter-plugins-dependencies.lock
+
+# Build output directories
+build/
+
+# Android related
+android/.gradle/
+android/app/key.properties
+android/local.properties
+android/.idea/
+android/app/build/
+android/app/*.iml
+*.iml
+
+# iOS related
+ios/Flutter/.last_build_id
+ios/Pods/
+ios/Runner.xcworkspace/
+ios/Flutter/Generated.xcconfig
+ios/.symlinks/
+ios/Flutter/ephemeral/
+
+# Windows related
+windows/.dart_tool/
+windows/flutter/GeneratedPluginRegistrant.*
+windows/CMakeCache.txt
+windows/cmake-build-debug/
+windows/flutter/ephemeral/
+
+# macOS related
+macos/Flutter/ephemeral/
+macos/Flutter/GeneratedPluginRegistrant.swift
+macos/.dart_tool/
+macos/.idea/
+macos/Flutter/GeneratedPluginRegistrant.*
+
+# Web related
+web/.dart_tool/
+.webdev/
+.dart_tool/
+*.log
+
+# VS Code related
+.vscode/
+.idea/
+*.iml
+*.swp
+
+# Xcode related
+xcuserdata/
+DerivedData/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+*.xcworkspace/
+
+# Flutter and Dart specific
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Others
+.idea/
+*.iml
+*.log
+*.tmp
+*.DS_Store
+*.log
+*.tmp
+*.swp
+
+# System files
+Thumbs.db
+.DS_Store
