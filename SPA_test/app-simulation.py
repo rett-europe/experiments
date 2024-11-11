@@ -1,13 +1,26 @@
 from flask import Flask, request, redirect, session, url_for, jsonify
 import requests
 import os
-from dotenv import load_dotenv
+import argparse
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
-# Load environment variables from .env file
-load_dotenv()
+def get_azure_function_url(env):
+    if env == "local":
+        return os.getenv("LOCAL_AZURE_FUNCTION_URL")
+    elif env == "azure":
+        return os.getenv("AZURE_FUNCTION_URL")
+    else:
+        raise ValueError("Invalid environment. Use 'local' or 'azure'.")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Set Azure Function URL based on environment.")
+    parser.add_argument("env", choices=["local", "azure"], help="Environment to use (local or azure)")
+    args = parser.parse_args()
+
+    AZURE_FUNCTION_URL = get_azure_function_url(args.env)
+    print(f"Using Azure Function URL: {AZURE_FUNCTION_URL}")
 
 # Fetch environment variables directly (no need for dotenv)
 AUTH0_DOMAIN = os.getenv("AUTH0_DOMAIN")
@@ -15,7 +28,6 @@ AUTH0_AUDIENCE = os.getenv("AUTH0_AUDIENCE")
 AUTH0_CLIENT_ID = os.getenv("AUTH0_CLIENT_ID")
 AUTH0_CLIENT_SECRET = os.getenv("AUTH0_CLIENT_SECRET")
 AUTH0_CALLBACK_URL = os.getenv("AUTH0_CALLBACK_URL")
-AZURE_FUNCTION_URL = os.getenv("AZURE_FUNCTION_URL")
 
 @app.route('/')
 def home():
@@ -89,9 +101,11 @@ def get_user_new():
         return 'route::users::Access token is missing. Please log in first.', 401
 
     # Compose the URL for the Azure Function
-    url = f"{AZURE_FUNCTION_URL}/api/user/profile"
+    url = f"{AZURE_FUNCTION_URL}/user/profile"
     headers = {
-        "Authorization": f"Bearer {access_token}"
+        "Authorization": f"Bearer {access_token}",
+        "Content-Type": "application/json",
+        "X-Request-ID": "12345"
     }
 
     # Debugging information
@@ -129,7 +143,7 @@ def warmup():
         return 'route::patients::Access token is missing. Please log in first.', 401
 
     # Compose the URL for the Azure Function
-    url = f"{AZURE_FUNCTION_URL}/api/patients/1"
+    url = f"{AZURE_FUNCTION_URL}/patients"
     headers = {
         "Authorization": f"Bearer {access_token}"
     }
@@ -169,21 +183,21 @@ def send_user_data():
         print("route::send-user-data::Access token is missing. Please log in first.")
         return 'route::send-user-data::Access token is missing. Please log in first.', 401
 
-    url = f"{AZURE_FUNCTION_URL}/api/user/profile"
+    url = f"{AZURE_FUNCTION_URL}/user/profile"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json"
     }
     data = {
-        "name": "Pedro",
-        "nickname": "pedroj",
-        "family_name": "Jimenez",
-        "given_name": "Pedro",
+        "name": "Peter Rock",
+        "nickname": "perico",
+        "family_name": "Rock",
+        "given_name": "Peter",
         "picture": "https://rettx.eu/wp-content/uploads/2024/11/rettX-1.svg",
         "user_metadata": {
-            "city": "Madriz",
+            "city": "Toledo",
             "country": "ES",
-            "region": "Madrid"
+            "region": "Castilla-La Mancha"
             }
     }
 
