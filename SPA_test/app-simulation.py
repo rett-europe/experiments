@@ -94,7 +94,7 @@ def user_profile():
 
 # This route is used to demonstrate the user profile retrieval from Azure Function
 @app.route('/user/profile', methods=['GET'])
-def get_user_new():
+def get_user():
     access_token = session.get('access_token')
     if not access_token:
         print("route::users::Access token is missing. Please log in first.")
@@ -120,23 +120,23 @@ def get_user_new():
         print(f"route::users::Response Content: {response.text}")
         return jsonify(response.json())
     except requests.exceptions.HTTPError as http_err:
-        print(f"route::users::HTTP error occurred: {http_err}")
-        return f"get_user::HTTP error occurred: {http_err}", 500
+        print(f"route::users::HTTP error occurred: {response.status_code} {http_err}")
+        return f"route::users::HTTP error occurred: {response.status_code} {http_err}", response.status_code
     except requests.exceptions.RequestException as req_err:
-        print(f"route::users::Request error occurred: {req_err}")
-        return f"route::users::Request error occurred: {req_err}", 500
+        print(f"route::users::Request error occurred: {response.status_code} {req_err}")
+        return f"route::users::Request error occurred: {response.status_code} {req_err}", response.status_code
     except ValueError as json_err:
         print(f"route::users::JSON decode error occurred: {json_err}")
         print(f"route::users::Response content: {response.text}")
-        return f"route::users::JSON decode error occurred: {json_err}", 500
+        return f"route::users::JSON decode error occurred: {response.status_code} {json_err}", response.status_code
     except Exception as e:
-        print(f"route::users::Unexpected error occurred: {e}")
-        return f"route::users::Unexpected error occurred: {e}", 500
+        print(f"route::users::Unexpected error occurred: {response.status_code} {e}")
+        return f"route::users::Unexpected error occurred: {response.status_code} {e}", response.status_code
 
 
 # This route is used to demonstrate the user profile retrieval from Azure Function
 @app.route('/patients', methods=['GET'])
-def warmup():
+def get_patients():
     access_token = session.get('access_token')
     if not access_token:
         print("route::patients::Access token is missing. Please log in first.")
@@ -160,18 +160,19 @@ def warmup():
         print(f"route::patients::Response Content: {response.text}")
         return jsonify(response.json())
     except requests.exceptions.HTTPError as http_err:
-        print(f"route::patients::HTTP error occurred: {http_err}")
-        return f"route::patients::HTTP error occurred: {http_err}", 500
+        print(f"route::patients::HTTP error occurred: {response.status_code} {http_err}")
+        return f"route::patients::HTTP error occurred: {http_err}", response.status_code
     except requests.exceptions.RequestException as req_err:
-        print(f"route::patients::Request error occurred: {req_err}")
-        return f"route::patients::Request error occurred: {req_err}", 500
+        print(f"route::patients::Request error occurred: {response.status_code} {req_err}")
+        return f"route::patients::Request error occurred: {req_err}", response.status_code
     except ValueError as json_err:
         print(f"route::patients::JSON decode error occurred: {json_err}")
         print(f"route::patients::Response content: {response.text}")
-        return f"route::patients::JSON decode error occurred: {json_err}", 500
+        print(f"route::patients::Response status code: {response.status_code}")
+        return f"route::patients::JSON decode error occurred: {json_err}", response.status_code
     except Exception as e:
-        print(f"route::patients::Unexpected error occurred: {e}")
-        return f"route::patients::Unexpected error occurred: {e}", 500
+        print(f"route::patients::Unexpected error occurred: {response.status_code} {e}")
+        return f"route::patients::Unexpected error occurred: {response.status_code} {e}", response.status_code
 
 
 
@@ -201,7 +202,7 @@ def send_user_data():
             }
     }
 
-    response = requests.put(url, headers=headers, json=data)
+    response = requests.patch(url, headers=headers, json=data)
     print(f"route::send-user-data::{response}")
     try:
         response.raise_for_status()
@@ -210,17 +211,18 @@ def send_user_data():
         return f"route::send-user-data::Successfully updated user profile: {response.text}", 200
     except requests.exceptions.HTTPError as http_err:
         print(f"route::send-user-data::HTTP error occurred: {http_err}")
-        return f"route::send-user-data::HTTP error occurred: {response.text}", 500
+        return f"route::send-user-data::HTTP error {response.status_code} {response.text}", response.status_code
     except requests.exceptions.RequestException as req_err:
         print(f"route::send-user-data::Request error occurred: {req_err}")
-        return f"route::send-user-data::Request error occurred: {response}", 500
+        return f"route::send-user-data::Request error occurred: {response.status_code} {response}", response.status_code
     except ValueError as json_err:
         print(f"route::send-user-data::JSON decode error occurred: {json_err}")
         print(f"route::send-user-data::Response content: {response.text}")
-        return f"route::send-user-data::JSON decode error occurred: {json_err}", 500
+        print(f"route::send-user-data::Response status code: {response.status_code}")
+        return f"route::send-user-data::JSON decode error occurred: {response.status_code} {json_err}", response.status_code
     except Exception as e:
         print(f"route::send-user-data::Unexpected error occurred: {e}")
-        return f"route::send-user-data::Unexpected error occurred: {e}", 500
+        return f"route::send-user-data::Unexpected error occurred: {response.status_code} {e}", response.status_code
 
 
 
