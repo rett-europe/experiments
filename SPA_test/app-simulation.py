@@ -51,6 +51,16 @@ def login():
 @app.route('/callback')
 def callback():
     print(f"callback::Callback from Auth0")
+
+    # Check for error in query parameters
+    error = request.args.get('error')
+    error_description = request.args.get('error_description')
+    
+    if error:
+        # Log the error details for debugging
+        print(f"callback::Error: {error}, Description: {error_description}")
+        return f"Error: {error}. {error_description}", 400
+
     code = request.args.get('code')
     if not code:
         return 'callback::Authorization code not found in the callback request.', 400
@@ -99,6 +109,9 @@ def get_user():
     if not access_token:
         print("route::users::Access token is missing. Please log in first.")
         return 'route::users::Access token is missing. Please log in first.', 401
+
+    access_token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldOVy1KcGJpejBXYXRUMHBuU0NSNCJ9.eyJpc3MiOiJodHRwczovL2xvZ2luLnJldHR4LmV1LyIsInN1YiI6ImF1dGgwfDY3NDg5MGY3OTQ5YzI4NGZjNTlhYjIwOSIsImF1ZCI6WyJodHRwczovL3JldHQtZXVyb3BlLmV1LmF1dGgwLmNvbS9hcGkvdjIvIiwiaHR0cHM6Ly9yZXR0LWV1cm9wZS5ldS5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNzMyODczMjYyLCJleHAiOjE3MzI5NTk2NjIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhenAiOiJVbXpkZzgybXhOcTV0RnVOSFpFblo3Tzg3aDc3anJhNyJ9.DFAN-h4krplJh91XhfBoO-Vj01f6a4j3N6kevUx6qjaah1VjwDimH-WRwh2qudBTGtzq_XcIH63RucnEOk1DbVYqBtJOtE0Xsa__7KiA8gK-Zhk1twlURQ-usbxTuVThkTP1qpFshKoBSoRkSnPkEet9YWNQN0RozKxQR4Y6st46VUrwcmVBaGEp1pQDxhU_UuOkWgIyYuerRnEZqy1iT61Ilfp2Q13K0qL4r0kDjEpOh7Md4uX60KHg2WrvUIZsg1Us1PekwnEklPLTgHDlQCEMXP7yff5zC_qWPzOXoaPKcE4rXnnBiZouxYQ8B-WrlKkmLmplWTOhtkClQeK2Wg"
+    id_token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldOVy1KcGJpejBXYXRUMHBuU0NSNCJ9.eyJuaWNrbmFtZSI6InRvbSIsIm5hbWUiOiJ0b21AcmV0dHguZXUiLCJwaWN0dXJlIjoiaHR0cHM6Ly9zLmdyYXZhdGFyLmNvbS9hdmF0YXIvYmNiZTIxY2QyN2FlNTBmZjBmYWEyMGY1YzI0YTQ5NTk_cz00ODAmcj1wZyZkPWh0dHBzJTNBJTJGJTJGY2RuLmF1dGgwLmNvbSUyRmF2YXRhcnMlMkZ0by5wbmciLCJ1cGRhdGVkX2F0IjoiMjAyNC0xMS0yOFQxNTo1NTo0Ny40OTZaIiwiZW1haWwiOiJ0b21AcmV0dHguZXUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5yZXR0eC5ldS8iLCJhdWQiOiJVbXpkZzgybXhOcTV0RnVOSFpFblo3Tzg3aDc3anJhNyIsImlhdCI6MTczMjg3MzI2MiwiZXhwIjoxNzMyOTA5MjYyLCJzdWIiOiJhdXRoMHw2NzQ4OTBmNzk0OWMyODRmYzU5YWIyMDkiLCJzaWQiOiI0VWN0czc4S3Q3REFZUWRwdmZnY2NpdVBfeDd5MUlfYiJ9.eayzkhTomLzXutWmJDjPRnSD91PoLSYpBIAjfjUJ5yxqTCzZrVBEL_6HfpxYkiD3FiTAe5mKUwwyxigft7CUQ4X9jNQ2bkkjsTg9_z6b-ReHemJl91IDwv4GUMnixqa0ZyQdKUgpD11yH6-JyLRfgkuPKEHVe9n75nd-Q11nVjWeN_GD6SRRuveVcZUsDEkMuv03o98omEUCZC0uA9uNp9uFf0sM-G77o0QiTGqXTpbtFfPIWUwobqI-5MQ7pRj4Hfktsl4f1eCe-bGh7um89FO9olkRHHb1qVrF5pm4FSMqgFkxLKOv1LmxxAChjBTGogviIhw1wLxg1ehu07tOwg"
 
     # Compose the URL for the Azure Function
     url = f"{AZURE_FUNCTION_URL}/user/profile"
