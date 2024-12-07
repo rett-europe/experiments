@@ -1,7 +1,8 @@
-from flask import Flask, request, redirect, session, url_for, jsonify
+from flask import Flask, request, redirect, session, url_for, jsonify, render_template_string
 import requests
 import os
 import argparse
+
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -236,6 +237,106 @@ def send_user_data():
     except Exception as e:
         print(f"route::send-user-data::Unexpected error occurred: {e}")
         return f"route::send-user-data::Unexpected error occurred: {response.status_code} {e}", response.status_code
+
+
+
+@app.route('/get-upload-url', methods=['GET', 'POST'])
+def get_upload_url():
+    access_token = session.get('access_token')
+    if not access_token:
+        return 'Access token is missing. Please log in first.', 401
+
+    if request.method == 'POST':
+        # Collect form inputs
+        patient_id = request.form.get('patient_id')
+        file_name = request.form.get('file_name')
+        file_type = request.form.get('file_type')
+
+        if not patient_id or not file_name or not file_type:
+            return "All fields (patient_id, file_name, file_type) are required.", 400
+
+        # Construct the URL and parameters according to the endpoint’s requirements
+        # Assuming the endpoint is something like:
+        # POST /patients/{id}/files/upload-file-info?file_name=xxx&file_type=yyy
+
+        upload_info_url = f"{AZURE_FUNCTION_URL}/patients/{patient_id}/files/upload-file-info"
+        params = {
+            "file_name": file_name,
+            "file_type": file_type
+        }
+
+        headers = {
+            "Authorization": f"Bearer {access_token}"
+        }
+
+        # Make the POST request
+        response = requests.post(upload_info_url, headers=headers, params=params)
+        if response.status_code != 200:
+            return f"Failed to get upload info: {response.status_code} {response.text}", response.status_code
+
+        upload_info = response.json()
+        full_url = upload_info.get('full_url')
+        if not full_url:
+            return "No full_url returned in upload info.", 500
+
+        # Store the URL in the session or just display it
+        session['upload_full_url'] = full_url
+
+        # Display the result
+        return f"""
+        <h2>Upload URL Retrieved</h2>
+        <p>Expiration: {upload_info.get('expiration')}</p>
+        <p>File ID: {upload_info.get('file_id')}</p>
+        <p>Patient ID: {upload_info.get('patient_id')}</p>
+        <p>Full URL: <a href="{full_url}" target="_blank">{full_url}</a></p>
+        <p><a href="/upload-file" target="_blank">Click here to upload the file now</a></p>
+        """
+
+    # If GET request, show the form
+    return render_template_string('''
+    <!doctype html>
+    <html>
+    <head><title>Get Upload URL</title></head>
+    <body>
+      <h1>Get Upload URL for Patient File</h1>
+      <form method="post">
+        <label for="patient_id">Patient ID:</label><br>
+        <input type="text" id="patient_id" name="patient_id" required><br><br>
+
+        <label for="file_name">File Name (e.g. "GeneticReport5_en.pdf"):</label><br>
+        <input type="text" id="file_name" name="file_name" required><br><br>
+
+        <label for="file_type">File Type (e.g. "genetic-report"):</label><br>
+        <input type="text" id="file_type" name="file_type" required><br><br>
+
+        <input type="submit" value="Get Upload URL">
+      </form>
+    </body>
+    </html>
+    ''')
+
+
+@app.route('/upload-file', methods=['GET'])
+def upload_file():
+    full_url = session.get('upload_full_url')
+    if not full_url:
+        return "No upload URL available. Please retrieve one first via /get-upload-url.", 400
+
+    local_file_path = "file.pdf"
+    if not os.path.isfile(local_file_path):
+        return f"File not found: {local_file_path}", 400
+
+    with open(local_file_path, 'rb') as file_data:
+        headers = {
+            'x-ms-blob-type': 'BlockBlob',
+            'x-ms-blob-content-type': 'application/pdf'
+        }
+        put_response = requests.put(full_url, headers=headers, data=file_data)
+        if put_response.status_code in (200, 201):
+            return "File uploaded successfully!", 200
+        else:
+            return f"Upload failed: {put_response.status_code} {put_response.text}", put_response.status_code
+
 
 
 
