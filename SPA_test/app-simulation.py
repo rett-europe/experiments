@@ -2,7 +2,7 @@ from flask import Flask, request, redirect, session, url_for, jsonify, render_te
 import requests
 import os
 import argparse
-
+from azure.storage.blob import BlobClient
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -275,12 +275,12 @@ def get_upload_url():
             return f"Failed to get upload info: {response.status_code} {response.text}", response.status_code
 
         upload_info = response.json()
-        full_url = upload_info.get('full_url')
-        if not full_url:
-            return "No full_url returned in upload info.", 500
+        file_url = upload_info.get('file_url')
+        if not file_url:
+            return "No file_url returned in upload info.", 500
 
         # Store the URL in the session or just display it
-        session['upload_full_url'] = full_url
+        session['upload_file_url'] = file_url
 
         # Display the result
         return f"""
@@ -288,7 +288,7 @@ def get_upload_url():
         <p>Expiration: {upload_info.get('expiration')}</p>
         <p>File ID: {upload_info.get('file_id')}</p>
         <p>Patient ID: {upload_info.get('patient_id')}</p>
-        <p>Full URL: <a href="{full_url}" target="_blank">{full_url}</a></p>
+        <p>Full URL: <a href="{file_url}" target="_blank">{file_url}</a></p>
         <p><a href="/upload-file" target="_blank">Click here to upload the file now</a></p>
         """
 
@@ -316,26 +316,44 @@ def get_upload_url():
     ''')
 
 
-@app.route('/upload-file', methods=['GET'])
+from azure.storage.blob import BlobClient, ContentSettings
+from flask import request
+
+@app.route('/upload-file', methods=['GET', 'POST'])
 def upload_file():
-    full_url = session.get('upload_full_url')
-    if not full_url:
-        return "No upload URL available. Please retrieve one first via /get-upload-url.", 400
+    if request.method == 'POST':
+        if 'file' not in request.files:
+            return "No file part in the request.", 400
 
-    local_file_path = "file.pdf"
-    if not os.path.isfile(local_file_path):
-        return f"File not found: {local_file_path}", 400
+        file = request.files['file']
+        if file.filename == '':
+            return "No selected file.", 400
 
-    with open(local_file_path, 'rb') as file_data:
-        headers = {
-            'x-ms-blob-type': 'BlockBlob',
-            'x-ms-blob-content-type': 'application/pdf'
-        }
-        put_response = requests.put(full_url, headers=headers, data=file_data)
-        if put_response.status_code in (200, 201):
-            return "File uploaded successfully!", 200
-        else:
-            return f"Upload failed: {put_response.status_code} {put_response.text}", put_response.status_code
+        blob_url = session.get('upload_file_url')
+        if not blob_url:
+            return "No upload URL available. Please retrieve one first via /get-upload-url.", 400
+
+        blob_client = BlobClient.from_blob_url(blob_url)
+        content_settings = ContentSettings(content_type=file.content_type)
+
+        blob_client.upload_blob(file, blob_type="BlockBlob", content_settings=content_settings, overwrite=True)
+        return "File uploaded successfully!", 200
+
+    # If GET request, show the form
+    return render_template_string('''
+    <!doctype html>
+    <html>
+    <head><title>Upload File</title></head>
+    <body>
+      <h1>Upload File</h1>
+      <form method="post" enctype="multipart/form-data">
+        <label for="file">Choose file to upload:</label><br>
+        <input type="file" id="file" name="file" required><br><br>
+        <input type="submit" value="Upload File">
+      </form>
+    </body>
+    </html>
+    ''')
 
 
 
