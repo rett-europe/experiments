@@ -1,0 +1,615 @@
+{
+    "data": [
+        {
+            "country_code": "BE",
+            "regions": [
+                {
+                    "code": "BE1",
+                    "label": "Région de Bruxelles-Capitale/Brussels Hoofdstedelijk Gewest"
+                },
+                {
+                    "code": "BE2",
+                    "label": "Vlaams Gewest"
+                },
+                {
+                    "code": "BE3",
+                    "label": "Région wallonne"
+                },
+                {
+                    "code": "BEZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "BG",
+            "regions": [
+                {
+                    "code": "BG3",
+                    "label": "Северна и Югоизточна България"
+                },
+                {
+                    "code": "BG4",
+                    "label": "Югозападна и Южна централна България"
+                },
+                {
+                    "code": "BGZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "CZ",
+            "regions": [
+                {
+                    "code": "CZ0",
+                    "label": "Česko"
+                },
+                {
+                    "code": "CZZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "DK",
+            "regions": [
+                {
+                    "code": "DK0",
+                    "label": "Danmark"
+                },
+                {
+                    "code": "DKZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "DE",
+            "regions": [
+                {
+                    "code": "DE1",
+                    "label": "Baden-Württemberg"
+                },
+                {
+                    "code": "DE2",
+                    "label": "Bayern"
+                },
+                {
+                    "code": "DE3",
+                    "label": "Berlin"
+                },
+                {
+                    "code": "DE4",
+                    "label": "Brandenburg"
+                },
+                {
+                    "code": "DE5",
+                    "label": "Bremen"
+                },
+                {
+                    "code": "DE6",
+                    "label": "Hamburg"
+                },
+                {
+                    "code": "DE7",
+                    "label": "Hessen"
+                },
+                {
+                    "code": "DE8",
+                    "label": "Mecklenburg-Vorpommern"
+                },
+                {
+                    "code": "DE9",
+                    "label": "Niedersachsen"
+                },
+                {
+                    "code": "DEA",
+                    "label": "Nordrhein-Westfalen"
+                },
+                {
+                    "code": "DEB",
+                    "label": "Rheinland-Pfalz"
+                },
+                {
+                    "code": "DEC",
+                    "label": "Saarland"
+                },
+                {
+                    "code": "DED",
+                    "label": "Sachsen"
+                },
+                {
+                    "code": "DEE",
+                    "label": "Sachsen-Anhalt"
+                },
+                {
+                    "code": "DEF",
+                    "label": "Schleswig-Holstein"
+                },
+                {
+                    "code": "DEG",
+                    "label": "Thüringen"
+                },
+                {
+                    "code": "DEZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "EE",
+            "regions": [
+                {
+                    "code": "EE0",
+                    "label": "Eesti"
+                },
+                {
+                    "code": "EEZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "IE",
+            "regions": [
+                {
+                    "code": "IE0",
+                    "label": "Ireland"
+                },
+                {
+                    "code": "IEZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "EL",
+            "regions": [
+                {
+                    "code": "EL3",
+                    "label": "Αττική"
+                },
+                {
+                    "code": "EL4",
+                    "label": "Νησιά Αιγαίου, Κρήτη"
+                },
+                {
+                    "code": "EL5",
+                    "label": "Βόρεια Ελλάδα"
+                },
+                {
+                    "code": "EL6",
+                    "label": "Κεντρική Ελλάδα"
+                },
+                {
+                    "code": "ELZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "ES",
+            "regions": [
+                {
+                    "code": "ES1",
+                    "label": "Noroeste"
+                },
+                {
+                    "code": "ES2",
+                    "label": "Noreste"
+                },
+                {
+                    "code": "ES3",
+                    "label": "Comunidad de Madrid"
+                },
+                {
+                    "code": "ES4",
+                    "label": "Centro (ES)"
+                },
+                {
+                    "code": "ES5",
+                    "label": "Este"
+                },
+                {
+                    "code": "ES6",
+                    "label": "Sur"
+                },
+                {
+                    "code": "ES7",
+                    "label": "Canarias"
+                },
+                {
+                    "code": "ESZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "FR",
+            "regions": [
+                {
+                    "code": "FR1",
+                    "label": "Ile-de-France"
+                },
+                {
+                    "code": "FRB",
+                    "label": "Centre — Val de Loire"
+                },
+                {
+                    "code": "FRC",
+                    "label": "Bourgogne-Franche-Comté"
+                },
+                {
+                    "code": "FRD",
+                    "label": "Normandie"
+                },
+                {
+                    "code": "FRE",
+                    "label": "Hauts-de-France"
+                },
+                {
+                    "code": "FRF",
+                    "label": "Grand Est"
+                },
+                {
+                    "code": "FRG",
+                    "label": "Pays de la Loire"
+                },
+                {
+                    "code": "FRH",
+                    "label": "Bretagne"
+                },
+                {
+                    "code": "FRI",
+                    "label": "Nouvelle-Aquitaine"
+                },
+                {
+                    "code": "FRJ",
+                    "label": "Occitanie"
+                },
+                {
+                    "code": "FRK",
+                    "label": "Auvergne-Rhône-Alpes"
+                },
+                {
+                    "code": "FRL",
+                    "label": "Provence-Alpes-Côte d’Azur"
+                },
+                {
+                    "code": "FRM",
+                    "label": "Corse"
+                },
+                {
+                    "code": "FRY",
+                    "label": "RUP FR — Régions Ultrapériphériques Françaises"
+                },
+                {
+                    "code": "FRZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "HR",
+            "regions": [
+                {
+                    "code": "HR0",
+                    "label": "Hrvatska"
+                },
+                {
+                    "code": "HRZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "IT",
+            "regions": [
+                {
+                    "code": "ITC",
+                    "label": "Nord-Ovest"
+                },
+                {
+                    "code": "ITF",
+                    "label": "Sud"
+                },
+                {
+                    "code": "ITG",
+                    "label": "Isole"
+                },
+                {
+                    "code": "ITH",
+                    "label": "Nord-Est"
+                },
+                {
+                    "code": "ITI",
+                    "label": "Centro (IT)"
+                },
+                {
+                    "code": "ITZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "CY",
+            "regions": [
+                {
+                    "code": "CY0",
+                    "label": "Κύπρος"
+                },
+                {
+                    "code": "CYZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "LV",
+            "regions": [
+                {
+                    "code": "LV0",
+                    "label": "Latvija"
+                },
+                {
+                    "code": "LVZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "LT",
+            "regions": [
+                {
+                    "code": "LT0",
+                    "label": "Lietuva"
+                },
+                {
+                    "code": "LTZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "LU",
+            "regions": [
+                {
+                    "code": "LU0",
+                    "label": "Luxembourg"
+                },
+                {
+                    "code": "LUZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "HU",
+            "regions": [
+                {
+                    "code": "HU1",
+                    "label": "Közép-Magyarország"
+                },
+                {
+                    "code": "HU2",
+                    "label": "Dunántúl"
+                },
+                {
+                    "code": "HU3",
+                    "label": "Alföld és Észak"
+                },
+                {
+                    "code": "HUZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "MT",
+            "regions": [
+                {
+                    "code": "MT0",
+                    "label": "Malta"
+                },
+                {
+                    "code": "MTZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "NL",
+            "regions": [
+                {
+                    "code": "NL1",
+                    "label": "Noord-Nederland"
+                },
+                {
+                    "code": "NL2",
+                    "label": "Oost-Nederland"
+                },
+                {
+                    "code": "NL3",
+                    "label": "West-Nederland"
+                },
+                {
+                    "code": "NL4",
+                    "label": "Zuid-Nederland"
+                },
+                {
+                    "code": "NLZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "AT",
+            "regions": [
+                {
+                    "code": "AT1",
+                    "label": "Ostösterreich"
+                },
+                {
+                    "code": "AT2",
+                    "label": "Südösterreich"
+                },
+                {
+                    "code": "AT3",
+                    "label": "Westösterreich"
+                },
+                {
+                    "code": "ATZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "PL",
+            "regions": [
+                {
+                    "code": "PL2",
+                    "label": "Makroregion południowy"
+                },
+                {
+                    "code": "PL4",
+                    "label": "Makroregion północno-zachodni"
+                },
+                {
+                    "code": "PL5",
+                    "label": "Makroregion południowo-zachodni"
+                },
+                {
+                    "code": "PL6",
+                    "label": "Makroregion północny"
+                },
+                {
+                    "code": "PL7",
+                    "label": "Makroregion centralny"
+                },
+                {
+                    "code": "PL8",
+                    "label": "Makroregion wschodni"
+                },
+                {
+                    "code": "PL9",
+                    "label": "Makroregion województwo mazowieckie"
+                },
+                {
+                    "code": "PLZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "PT",
+            "regions": [
+                {
+                    "code": "PT1",
+                    "label": "Continente"
+                },
+                {
+                    "code": "PT2",
+                    "label": "Região Autónoma dos Açores"
+                },
+                {
+                    "code": "PT3",
+                    "label": "Região Autónoma da Madeira"
+                },
+                {
+                    "code": "PTZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "RO",
+            "regions": [
+                {
+                    "code": "RO1",
+                    "label": "Macroregiunea Unu"
+                },
+                {
+                    "code": "RO2",
+                    "label": "Macroregiunea Doi"
+                },
+                {
+                    "code": "RO3",
+                    "label": "Macroregiunea Trei"
+                },
+                {
+                    "code": "RO4",
+                    "label": "Macroregiunea Patru"
+                },
+                {
+                    "code": "ROZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "SI",
+            "regions": [
+                {
+                    "code": "SI0",
+                    "label": "Slovenija"
+                },
+                {
+                    "code": "SIZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "SK",
+            "regions": [
+                {
+                    "code": "SK0",
+                    "label": "Slovensko"
+                },
+                {
+                    "code": "SKZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "FI",
+            "regions": [
+                {
+                    "code": "FI1",
+                    "label": "Manner-Suomi"
+                },
+                {
+                    "code": "FI2",
+                    "label": "Åland"
+                },
+                {
+                    "code": "FIZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        },
+        {
+            "country_code": "SE",
+            "regions": [
+                {
+                    "code": "SE1",
+                    "label": "Östra Sverige"
+                },
+                {
+                    "code": "SE2",
+                    "label": "Södra Sverige"
+                },
+                {
+                    "code": "SE3",
+                    "label": "Norra Sverige"
+                },
+                {
+                    "code": "SEZ",
+                    "label": "Extra-Regio NUTS 1"
+                }
+            ]
+        }
+    ]
+}
